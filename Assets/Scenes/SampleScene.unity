@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 37919673}
   - component: {fileID: 37919676}
   m_Layer: 0
-  m_Name: Market Stall Blue
+  m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,6 +538,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f155a1cc8cabfc146a6b66683b817e20, type: 3}
+--- !u!1 &676713478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4333536560383591219, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
+  m_PrefabInstance: {fileID: 2095765293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &676713483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676713478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759a56bccf1076d4ab9a066ea10bb9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToGrow: 30
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1112,7 @@ GameObject:
   - component: {fileID: 1175408186}
   - component: {fileID: 1175408189}
   m_Layer: 0
-  m_Name: Market Stall Red
+  m_Name: Buy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1795,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992441233885976969, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -0.756
       objectReference: {fileID: 0}
     - target: {fileID: 3992441233885976969, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1840,7 +1858,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4333536560383591219, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 676713483}
   m_SourcePrefab: {fileID: 100100000, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
