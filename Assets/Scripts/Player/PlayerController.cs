@@ -3,40 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//ce script a été fais a l'aide d'une video youtube (meme avec le tuto j'en est chiez)
 public class PlayerController : MonoBehaviour
 {
-    private InputMaster _controls;
-    private float _moveSpeed;
-    private Vector3 _velocity;
-    private Vector2 _move;
-    private CharacterController _controller;
-    
+    CharacterController _controller;
+    Vector2 _moveInput;
+    [SerializeField] float _speed;
+    Vector3 _playerVelocity;
+    bool _grounded;
+    float gravity = -9.81f;
+    float _jumpForce = 2f;
+    [SerializeField] Camera _camera;
+    private Vector2 _lookPos;
+    private float _xRotation = 0f;
+    private float _xSens = 30f;
+    private float _ySens = 30f;
+
 
     private void Awake()
     {
-        _controls = new InputMaster();
         _controller = GetComponent<CharacterController>();
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void Update()
     {
-        PlayerMovement();
+        _grounded = _controller.isGrounded;
+        MovePlayer();
+        PlayerLook();
+    }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+       _moveInput = context.ReadValue<Vector2>();
     }
 
-    private void PlayerMovement()
+    public void OnJump(InputAction.CallbackContext context)
     {
-        _move = _controls.Player.Movement.ReadValue<Vector2>();
-        Vector3 movement = (_move.y * transform.forward) + (_move.x * transform.right);
-        _controller.Move(movement * _moveSpeed * Time.deltaTime);
+        Jump();
     }
 
-    private void OnEnable()
+    public void OnLook(InputAction.CallbackContext context)
     {
-        _controls.Enable();
+        _lookPos = context.ReadValue<Vector2>();
+    }
+    private void MovePlayer()
+    {
+        Vector3 moveDirection = Vector3.zero;
+        moveDirection.x = _moveInput.x;
+        moveDirection.z = _moveInput.y;
+        _controller.Move(transform.TransformDirection(moveDirection) * _speed * Time.deltaTime);
+
+        _playerVelocity.y += gravity * Time.deltaTime;
+        if (_grounded && _playerVelocity.y > 0f)
+        {
+            _playerVelocity.y = -2f;
+        }
+        _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
-    private void OnDisable()
+    private void PlayerLook()
     {
-        _controls?.Disable();
+        _xRotation -= (_lookPos.y * Time.deltaTime) * _ySens;
+        _xRotation = Mathf.Clamp(_xRotation, -80f, 80f);
+        _camera.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+        transform.Rotate(Vector3.up * (_lookPos.x * Time.deltaTime) * _xSens);
+    }
+
+    private void Jump()
+    {
+        if (_grounded)
+        {
+            _playerVelocity.y = Mathf.Sqrt(_jumpForce * -3f * gravity);
+        }
     }
 }
