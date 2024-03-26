@@ -1,14 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class Plant : MonoBehaviour
 {
     [SerializeField] float _timeToGrow;
+    [HideInInspector] public bool _canHarvest;
     void Start()
     {
         StartCoroutine(Grow());
+        _canHarvest = false;
     }
     IEnumerator Grow() // boucle update jusqu'a la fin de la boucle while (une fois endTime depassé)
     {
@@ -23,5 +23,7 @@ public class Plant : MonoBehaviour
             yield return 0;
         }
         transform.position = endPosition;
+        _canHarvest = true;
+        
     } 
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,11 +11,12 @@ public class PlayerController : MonoBehaviour
     bool _grounded;
     float gravity = -9.81f;
     float _jumpForce = 2f;
+    float _xRotation = 0f;
+    float _xSens = 30f;
+    float _ySens = 30f;
     [SerializeField] Camera _camera;
-    private Vector2 _lookPos;
-    private float _xRotation = 0f;
-    private float _xSens = 30f;
-    private float _ySens = 30f;
+    Vector2 _lookPos;
+    
 
 
     private void Awake()
@@ -46,6 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         _lookPos = context.ReadValue<Vector2>();
     }
+   
+    
     private void MovePlayer()
     {
         Vector3 moveDirection = Vector3.zero;
