@@ -24,7 +24,7 @@ public class GoSell : MonoBehaviour
 
     public void SellCarrot()
     {
-        if (_inventory.carrot < 1)
+        if (_inventory.carrot >= 1)
         {
             _inventory.carrot -- ;
             _inventory.gold += 5;

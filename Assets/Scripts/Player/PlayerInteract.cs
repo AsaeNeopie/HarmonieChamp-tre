@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
             Plant plant = hitData.collider.GetComponent<Plant>();
             if (plant == null || !plant._canHarvest) return;
             Destroy(hitData.collider.gameObject);
-            _inventory.carrot ++ ;
+            _inventory.carrot ++;
         }
         if (hitData.collider)
         {
