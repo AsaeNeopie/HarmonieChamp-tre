@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _speed;
     Vector3 _playerVelocity;
     bool _grounded;
+    [HideInInspector] public bool canLook = true;
     float gravity = -9.81f;
     float _jumpForce = 2f;
     float _xRotation = 0f;
