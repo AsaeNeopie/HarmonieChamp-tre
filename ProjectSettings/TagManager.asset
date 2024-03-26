@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crops
+  - Field
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - Ground
   - Crops
-  - 
+  - Field
   - 
   - 
   - 

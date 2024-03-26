@@ -3,7 +3,7 @@ using UnityEngine;
 public class GoBuy : MonoBehaviour
 {
     [SerializeField] GameObject _buyPanel;
-
+    [SerializeField] PlayerInventory _inventory;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -19,6 +19,15 @@ public class GoBuy : MonoBehaviour
         {
             _buyPanel.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    public void BuyCarrotSeed()
+    {
+        if (_inventory.gold >= 3)
+        {
+            _inventory.gold -= 3;
+            _inventory.carrotSeed ++;
         }
     }
 }
