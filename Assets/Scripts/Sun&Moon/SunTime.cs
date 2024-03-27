@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SunTime : MonoBehaviour
 {
-    IEnumerator Grow() // boucle update jusqu'a la fin de la boucle while (une fois endTime depassé)
+    /*IEnumerator Grow() // boucle update jusqu'a la fin de la boucle while (une fois endTime depassé)
     {
         Vector3 basePosition = transform.position;
         Vector3 endPosition = transform.position + Vector3.up;
@@ -19,5 +19,5 @@ public class SunTime : MonoBehaviour
         transform.position = endPosition;
         _canHarvest = true;
 
-    }
+    }*/
 }
