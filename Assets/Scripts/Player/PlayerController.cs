@@ -56,10 +56,6 @@ public class PlayerController : MonoBehaviour
         _controller.Move(transform.TransformDirection(moveDirection) * _speed * Time.deltaTime);
 
         _playerVelocity.y += gravity * Time.deltaTime;
-        if (_grounded && _playerVelocity.y > 0f)
-        {
-            _playerVelocity.y = -2f;
-        }
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
@@ -75,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_grounded)
         {
-            _playerVelocity.y = Mathf.Sqrt(_jumpForce * -3f * gravity);
+            _playerVelocity.y = Mathf.Sqrt(_jumpForce * -1.5f * gravity);
         }
     }
 }
