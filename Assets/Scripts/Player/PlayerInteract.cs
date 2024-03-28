@@ -24,7 +24,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Interaction()
     {
-        Ray ray = new Ray(transform.position, _cam.transform.forward);
+        Ray ray = new Ray(_cam.transform.position, _cam.transform.forward);
         RaycastHit hitData;
 
         if(Physics.Raycast(ray, out hitData, _maxRaycastHit))
