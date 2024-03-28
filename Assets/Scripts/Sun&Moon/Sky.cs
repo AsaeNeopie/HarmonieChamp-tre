@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sky : MonoBehaviour
 {
-    public Gradient mesboules;
+    public Gradient gradient;
     [SerializeField] TimeManager timeManager;
     [SerializeField] Material mat;
     [SerializeField] Light _light;
@@ -12,7 +12,7 @@ public class Sky : MonoBehaviour
     {
         float alpha = Mathf.Sin(Time.time * timeManager._frequency + timeManager.offset);
         alpha = (alpha + 1) * 0.5f;
-        mat.SetColor("_BaseColor", mesboules.Evaluate(alpha));
-        _light.color = mesboules.Evaluate(alpha);
+        mat.SetColor("_BaseColor", gradient.Evaluate(alpha));
+        _light.color = gradient.Evaluate(alpha);
     }
 }

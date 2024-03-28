@@ -40,7 +40,7 @@ public class GoBuy : MonoBehaviour
         if (_inventory.gold >= 5)
         {
             _inventory.gold -= 5;
-            _inventory.carrotSeed++;
+            _inventory.tomatoSeed++;
         }
     }
     public void buyField()

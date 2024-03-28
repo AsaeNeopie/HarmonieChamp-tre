@@ -30,4 +30,13 @@ public class GoSell : MonoBehaviour
             _inventory.gold += 5;
         }
     }
+
+    public void SellTomato()
+    {
+        if (_inventory.tomato >= 1)
+        {
+            _inventory.tomato--;
+            _inventory.gold += 3;
+        }
+    }
 }

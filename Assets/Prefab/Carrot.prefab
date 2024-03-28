@@ -202,5 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759a56bccf1076d4ab9a066ea10bb9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToGrow: 30
-  _canHarvest: 0
+  _timeToGrow: 20
+  canHarvest: 0
+  isCarrot: 1
+  isTomato: 0
+  isCabbage: 0
+  isTrompinnette: 0
+  Field: {fileID: 4768825658688549506, guid: 02a27d619cb5bef41bf57ecc788a7c2a, type: 3}

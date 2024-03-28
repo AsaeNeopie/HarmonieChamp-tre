@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     Vector3 _playerVelocity;
     bool _grounded;
     [HideInInspector] public bool canLook = true;
-    float gravity = -9.81f;
+    float _gravity = -9.81f;
     float _jumpForce = 2f;
     float _xRotation = 0f;
     float _xSens = 30f;
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         PlayerLook();
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
        _moveInput = context.ReadValue<Vector2>();
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.z = _moveInput.y;
         _controller.Move(transform.TransformDirection(moveDirection) * _speed * Time.deltaTime);
 
-        _playerVelocity.y += gravity * Time.deltaTime;
+        _playerVelocity.y += _gravity * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_grounded)
         {
-            _playerVelocity.y = Mathf.Sqrt(_jumpForce * -1.5f * gravity);
+            _playerVelocity.y = Mathf.Sqrt(_jumpForce * -1.5f * _gravity);
         }
     }
 }
