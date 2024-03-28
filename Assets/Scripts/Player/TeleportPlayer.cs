@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TeleportPlayer : MonoBehaviour
 {
+    [SerializeField] GameObject _respawnPoint;
     private void OnTriggerEnter(Collider other)
     {       
         Debug.Log(other.name);
-        other.transform.position = new Vector3(20,1,0);       
+        other.gameObject.transform.position = _respawnPoint.transform.position;       
     }
 }
