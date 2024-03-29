@@ -98,12 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vegeteable: {fileID: 4333536560383591219, guid: ac3960763d9ed134b93e9bf2315734f3, type: 3}
-  maxVegeteable: 5
-  nbVegeteable: 0
-  isCarrotField: 1
-  isTomatoField: 0
-  isCabbageField: 0
-  isTrompinnetteField: 0
+  <MaxVegeteable>k__BackingField: 5
+  <IsCarrotField>k__BackingField: 1
+  <IsTomatoField>k__BackingField: 0
 --- !u!64 &681792701135904950
 MeshCollider:
   m_ObjectHideFlags: 0

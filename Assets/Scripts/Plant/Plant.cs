@@ -7,19 +7,19 @@ public class Plant : MonoBehaviour
     /// Permet de faire poussez une plante
     /// </summary>
     [SerializeField] float _timeToGrow;
-    [HideInInspector] public bool canHarvest; //{  get;  public set ; }
-    public bool IsCarrot;//{  get; private set; }
-    public bool IsTomato;//{ get; private set; }
-    public Field Field;// { get; set; }
+    [field: HideInInspector] public bool CanHarvest { get; set; }
+    [field :SerializeField] public bool IsCarrot {  get; private set; }
+    [field: SerializeField] public bool IsTomato { get; private set; }
+    public Field Field { get; set; }
 
 
     void Start()
     {
         StartCoroutine(Grow());
-        canHarvest = false;       
+        CanHarvest = false;       
     }
     
-    IEnumerator Grow() // boucle update jusqu'a la fin de la boucle while (une fois endTime depassé)
+    IEnumerator Grow() // modifie la position en y temps que _timeToGrow n'est pas arrivé a 0
     {
         Vector3 basePosition = transform.position;
         Vector3 endPosition = transform.position + Vector3.up;
@@ -31,6 +31,6 @@ public class Plant : MonoBehaviour
             yield return 0;
         }
         transform.position = endPosition;
-        canHarvest = true;
+        CanHarvest = true;
     } 
 }

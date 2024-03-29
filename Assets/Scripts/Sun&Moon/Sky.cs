@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sky : MonoBehaviour
 {
-    public Gradient gradient;
+    /// <summary>
+    /// permet de pouvoir modifier la couleur du material "sky" en fonction du script "TimeManager"
+    /// </summary>
+    [field:SerializeField] public Gradient gradient { get ; private set; }
     [SerializeField] TimeManager timeManager;
     [SerializeField] Material mat;
     [SerializeField] Light _light;
+
     void Update()
     {
         float alpha = Mathf.Sin(Time.time * timeManager._frequency + timeManager.offset);

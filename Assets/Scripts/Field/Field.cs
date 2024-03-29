@@ -3,10 +3,11 @@ using UnityEngine;
 public class Field : MonoBehaviour
 {
     [SerializeField] private GameObject vegeteable;
-    public int MaxVegeteable = 5;
-    [HideInInspector] public int NbVegeteable;
-    public bool IsCarrotField;// { get; set; }
-    public bool IsTomatoField;// { get; set; }
+    [field: SerializeField] public int MaxVegeteable {  get; private set; }
+    public int NbVegeteable { get;  set; }
+    [field: SerializeField] public bool IsCarrotField { get; set; }
+    [field: SerializeField] public bool IsTomatoField { get; set; }
+
 
     public void TryToPlantAt(Vector3 point)
     {

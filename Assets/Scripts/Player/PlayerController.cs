@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//ce script a été fais a l'aide d'une video youtube (meme avec le tuto j'en est chiez)
+/// <summary>
+/// ce script a été fais a l'aide d'une video youtube (meme avec le tuto j'en est chiez), il permet de deplacer le joueur, bouger la camera et sauter
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     CharacterController _controller;
@@ -18,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Camera _camera;
     Vector2 _lookPos;
     
-
 
     private void Awake()
     {
@@ -47,7 +48,6 @@ public class PlayerController : MonoBehaviour
     {
         _lookPos = context.ReadValue<Vector2>();
     }
-   
     
     private void MovePlayer()
     {

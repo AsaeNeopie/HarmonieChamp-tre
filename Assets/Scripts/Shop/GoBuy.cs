@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class GoBuy : MonoBehaviour
 {
+    /// <summary>
+    /// Permet d'acheter des graines et le champs de tomate 
+    /// </summary>
     [SerializeField] GameObject _buyPanel;
     [SerializeField] PlayerInventory _inventory;
     [SerializeField] GameObject _tomatofield;
     [SerializeField] GameObject _tomatoBuyButton;
     [SerializeField] GameObject _tomatoSellButton;
     [SerializeField] GameObject _fieldButton;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -28,26 +33,26 @@ public class GoBuy : MonoBehaviour
 
     public void BuyCarrotSeed()
     {
-        if (_inventory.gold >= 3)
+        if (_inventory.Gold >= 3)
         {
-            _inventory.gold -= 3;
-            _inventory.carrotSeed ++;
+            _inventory.Gold -= 3;
+            _inventory.CarrotSeed ++;
         }
     }
 
     public void BuyTomatotSeed()
     {
-        if (_inventory.gold >= 5)
+        if (_inventory.Gold >= 5)
         {
-            _inventory.gold -= 5;
-            _inventory.tomatoSeed++;
+            _inventory.Gold -= 5;
+            _inventory.TomatoSeed++;
         }
     }
-    public void buyField()
+    public void BuyField()
     {
-        if (_inventory.gold >= 15)
+        if (_inventory.Gold >= 15)
         {
-            _inventory.gold -= 15;
+            _inventory.Gold -= 15;
             _tomatoBuyButton.SetActive(true);
             _tomatofield.SetActive(true);
             _fieldButton.SetActive(false);

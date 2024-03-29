@@ -49,10 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToGrow: 45
-  canHarvest: 0
-  IsCarrot: 0
-  IsTomato: 1
-  Field: {fileID: 7835400658788446110, guid: 0ed14226af3c50c44a8cf08eb4a0347a, type: 3}
+  <IsCarrot>k__BackingField: 0
+  <IsTomato>k__BackingField: 1
 --- !u!33 &8217959281089099218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -122,8 +120,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.44876108, y: 0.8627665, z: 0.38152575}
-  m_Center: {x: -0.04742555, y: -0.2766224, z: 0.034383856}
+  m_Size: {x: 0.44876108, y: 0.8571228, z: 0.38152575}
+  m_Center: {x: -0.04742555, y: -0.41349763, z: 0.034383856}
 --- !u!1 &4367292680175838459
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 4367292680175838459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.699, z: 0}
+  m_LocalPosition: {x: 0, y: -0.839, z: 0}
   m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_ConstrainProportionsScale: 1
   m_Children: []

@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class GoSell : MonoBehaviour
 {
+    /// <summary>
+    /// Permet de vendre les carrotes et tomates
+    /// </summary>
     [SerializeField] GameObject _sellPanel;
     [SerializeField] PlayerInventory _inventory;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -24,19 +29,18 @@ public class GoSell : MonoBehaviour
 
     public void SellCarrot()
     {
-        if (_inventory.carrot >= 1)
+        if (_inventory.Carrot >= 1)
         {
-            _inventory.carrot -- ;
-            _inventory.gold += 5;
+            _inventory.Carrot -- ;
+            _inventory.Gold += 6;
         }
     }
-
     public void SellTomato()
     {
-        if (_inventory.tomato >= 1)
+        if (_inventory.Tomato >= 1)
         {
-            _inventory.tomato--;
-            _inventory.gold += 3;
+            _inventory.Tomato--;
+            _inventory.Gold += 3;
         }
     }
 }

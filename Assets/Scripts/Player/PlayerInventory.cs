@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [HideInInspector] public int gold;
-    [HideInInspector] public int carrotSeed;
-    [HideInInspector] public int carrot;
-    [HideInInspector] public int tomatoSeed;
-    [HideInInspector] public int tomato;
+    public int Gold { get; set; }
+    public int CarrotSeed { get; set; }
+    public int Carrot { get; set; }
+    public int TomatoSeed { get; set; }
+    public int Tomato {  get; set; }
+
+    private void Start()
+    {
+        Gold = 3;
+    }
 }

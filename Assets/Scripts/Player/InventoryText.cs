@@ -12,10 +12,10 @@ public class InventoryText : MonoBehaviour
 
     void Update()
     {
-        _goldText.text = _inventory.gold.ToString();
-        _carrotSeedText.text = _inventory.carrotSeed.ToString();
-        _carrotText.text = _inventory.carrot.ToString();
-        _tomatoSeedText.text = _inventory.tomatoSeed.ToString();
-        _tomatoText.text = _inventory.tomato.ToString();
+        _goldText.text = _inventory.Gold.ToString();
+        _carrotSeedText.text = _inventory.CarrotSeed.ToString();
+        _carrotText.text = _inventory.Carrot.ToString();
+        _tomatoSeedText.text = _inventory.TomatoSeed.ToString();
+        _tomatoText.text = _inventory.Tomato.ToString();
     }
 }
