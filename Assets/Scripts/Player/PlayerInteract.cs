@@ -35,14 +35,14 @@ public class PlayerInteract : MonoBehaviour
             if (hitData.collider == null) return;
             
             Plant plant = hitData.collider.GetComponent<Plant>();
-            if (plant != null && plant.canHarvest && plant.isCarrot)
+            if (plant != null && plant.canHarvest && plant.IsCarrot)
             {
                 plant.Field.FreeSlot();
                 Destroy(hitData.collider.gameObject);
                 _inventory.carrot++;                
                 return;
             }
-            else if (plant != null && plant.canHarvest && plant.isTomato)
+            else if (plant != null && plant.canHarvest && plant.IsTomato)
             {
                 plant.Field.FreeSlot();
                 Destroy(hitData.collider.gameObject);
@@ -52,14 +52,14 @@ public class PlayerInteract : MonoBehaviour
 
 
             Field field = hitData.collider.GetComponent<Field>();
-            if (field != null && _inventory.carrotSeed > 0 && field.isCarrotField)
+            if (field != null && _inventory.carrotSeed > 0 && field.IsCarrotField)
             {
                 field.TryToPlantAt(hitData.point);
                 _inventory.carrotSeed--;
                 return;
             }
 
-            if (field != null && _inventory.tomatoSeed > 0 && field.isTomatoField)
+            if (field != null && _inventory.tomatoSeed > 0 && field.IsTomatoField)
             {
                 field.TryToPlantAt(hitData.point);
                 _inventory.tomatoSeed--;

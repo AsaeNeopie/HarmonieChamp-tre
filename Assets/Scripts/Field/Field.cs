@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
-    public GameObject vegeteable;
-    public int maxVegeteable = 5;
-    [HideInInspector] public int nbVegeteable;
-    public bool isCarrotField;
-    public bool isTomatoField;
-    public bool isCabbageField;
-    public bool isTrompinnetteField;
-
+    [SerializeField] private GameObject vegeteable;
+    public int MaxVegeteable = 5; 
+    [HideInInspector] public int NbVegeteable {  get; private set; }
+    public bool IsCarrotField { get; set; }
+    public bool IsTomatoField { get; set; }
 
     public void TryToPlantAt(Vector3 point)
     {
-        if (nbVegeteable <= maxVegeteable)         
+        if (NbVegeteable <= MaxVegeteable)         
         {
             GameObject plantObject = Instantiate(vegeteable, point, Quaternion.identity);
             Plant plant = plantObject.GetComponent<Plant>();
             plant.Field = this;
-            maxVegeteable++;
+            MaxVegeteable++;
         }         
     }
 
     public void FreeSlot()
     {
-        maxVegeteable--;
-        Debug.Log(maxVegeteable);
+        MaxVegeteable--;
+        Debug.Log(MaxVegeteable);
     }
 }
