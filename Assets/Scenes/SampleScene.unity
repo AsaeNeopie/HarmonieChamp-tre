@@ -4303,7 +4303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buyPanel: {fileID: 279236368}
-  _inventory: {fileID: 0}
+  _inventory: {fileID: 49464353}
   _tomatofield: {fileID: 2131662260}
   _tomatoBuyButton: {fileID: 1314799309}
   _tomatoSellButton: {fileID: 1608269964}
@@ -6948,7 +6948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sellPanel: {fileID: 819672536}
-  _inventory: {fileID: 0}
+  _inventory: {fileID: 49464353}
 --- !u!1001 &2056142043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7229,6 +7229,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1745449548}
     m_Modifications:
+    - target: {fileID: 204693588891565758, guid: 0ed14226af3c50c44a8cf08eb4a0347a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00649
+      objectReference: {fileID: 0}
+    - target: {fileID: 204693588891565758, guid: 0ed14226af3c50c44a8cf08eb4a0347a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00054
+      objectReference: {fileID: 0}
     - target: {fileID: 6716426325502884968, guid: 0ed14226af3c50c44a8cf08eb4a0347a, type: 3}
       propertyPath: m_Name
       value: TomatoField
