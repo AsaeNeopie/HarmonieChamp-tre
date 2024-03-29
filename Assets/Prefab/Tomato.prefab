@@ -49,10 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeToGrow: 45
   canHarvest: 0
-  isCarrot: 0
-  isTomato: 1
-  isCabbage: 0
-  isTrompinnette: 0
+  IsCarrot: 0
+  IsTomato: 1
   Field: {fileID: 7835400658788446110, guid: 0ed14226af3c50c44a8cf08eb4a0347a, type: 3}
 --- !u!33 &8217959281089099218
 MeshFilter:

@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
         moveDirection.x = _moveInput.x;
         moveDirection.z = _moveInput.y;
         _controller.Move(transform.TransformDirection(moveDirection) * _speed * Time.deltaTime);
-
         _playerVelocity.y += _gravity * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }

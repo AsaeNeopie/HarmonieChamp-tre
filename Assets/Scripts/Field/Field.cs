@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Field : MonoBehaviour
 {
     [SerializeField] private GameObject vegeteable;
-    public int MaxVegeteable = 5; 
-    [HideInInspector] public int NbVegeteable {  get; private set; }
-    public bool IsCarrotField { get; set; }
-    public bool IsTomatoField { get; set; }
+    public int MaxVegeteable = 5;
+    [HideInInspector] public int NbVegeteable;
+    public bool IsCarrotField;// { get; set; }
+    public bool IsTomatoField;// { get; set; }
 
     public void TryToPlantAt(Vector3 point)
     {

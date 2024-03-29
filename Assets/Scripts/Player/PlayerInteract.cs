@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,8 +12,6 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Plant _plantScript;
     [SerializeField] PlayerInventory _inventory;
     [SerializeField] Camera _cam;
-    [SerializeField] LayerMask _layerMask;
-  
 
     public void OnInteract(InputAction.CallbackContext context)
     {

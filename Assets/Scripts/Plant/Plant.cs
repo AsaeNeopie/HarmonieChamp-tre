@@ -7,10 +7,10 @@ public class Plant : MonoBehaviour
     /// Permet de faire poussez une plante
     /// </summary>
     [SerializeField] float _timeToGrow;
-    [HideInInspector] public bool canHarvest {  get;  set; }
-    public bool IsCarrot {  get; private set; }
-    public bool IsTomato { get; private set; }
-    public Field Field { get; set; }
+    [HideInInspector] public bool canHarvest; //{  get;  public set ; }
+    public bool IsCarrot;//{  get; private set; }
+    public bool IsTomato;//{ get; private set; }
+    public Field Field;// { get; set; }
 
 
     void Start()
